@@ -15,7 +15,7 @@ class Solution:
         return missing
         '''
         according to the question, if we sort the list in every index there is supposed to be index + 1 number
-        so we loop through the numbers, subtract it by 1 to get it's index and mark it (by negating it) to know it's filled
+        so we loop through the numbers, subtract each by 1 to get their *pos and mark it (by negating it) to know it's filled
         we return numbers of non filled (+ve ones) indexes, by returning idx + 1
 
         '''
