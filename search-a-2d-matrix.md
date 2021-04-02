@@ -15,12 +15,14 @@ class Solution:
     def searchMatrix(self, matrix, target):
         if not matrix or not matrix[0]: return False
         m, n = len(matrix[0]), len(matrix)
-        beg, end = 0, m*n - 1
-        while beg < end:
-            mid = (beg + end)//2
+        l, r = 0, m*n - 1
+        while l <= r:
+            mid = (l + r)//2
+            if matrix[mid//m][mid%m] == target:
+                return True
             if matrix[mid//m][mid%m] < target:
-                beg = mid + 1
+                l = mid + 1
             else:
-                end = mid
-        return matrix[beg//m][beg%m] == target
+                r = mid - 1
+        return False
 ```
